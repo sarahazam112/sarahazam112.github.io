@@ -60,6 +60,15 @@
     .card { grid-column: span 12; border: 1px solid var(--border); border-radius: 16px; background: var(--card); padding: 16px; transition: box-shadow .2s ease; }
     .card:hover { box-shadow: 0 6px 24px var(--ring); }
     .card .thumb { width: 100%; aspect-ratio: 16/9; border-radius: 12px; background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 30%, transparent), var(--border)); border: 1px solid var(--border); margin-bottom: 12px; display: grid; place-items: center; color: var(--muted); font-weight: 600; }
+    .card .thumb.thumb--icon { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 20px; text-align: center; }
+    .card .thumb.thumb--icon svg { width: 52px; height: 52px; flex-shrink: 0; stroke-width: 1.75; }
+    .card .thumb.thumb--icon .thumb__label { font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: inherit; }
+    .card .thumb.thumb--stock { background: linear-gradient(135deg, rgba(34, 197, 94, 0.22), color-mix(in oklab, var(--card) 40%, #052e16)); border-color: rgba(34, 197, 94, 0.35); color: #86efac; }
+    .card .thumb.thumb--stock svg { stroke: #86efac; fill: none; }
+    .card .thumb.thumb--business { background: linear-gradient(135deg, rgba(99, 102, 241, 0.22), color-mix(in oklab, var(--card) 40%, #1e1b4b)); border-color: rgba(129, 140, 248, 0.35); color: #a5b4fc; }
+    .card .thumb.thumb--business svg { stroke: #a5b4fc; fill: none; }
+    .card .thumb.thumb--interview { background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), color-mix(in oklab, var(--card) 40%, #3b0764)); border-color: rgba(192, 132, 252, 0.35); color: #d8b4fe; }
+    .card .thumb.thumb--interview svg { stroke: #d8b4fe; fill: none; }
     .card .thumb.thumb--embed { padding: 0; overflow: hidden; position: relative; display: block; }
     .card .thumb.thumb--embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; margin: 0; border-radius: 12px; }
     .card h3 { margin: 0 0 6px; font-size: 18px; }
@@ -111,7 +120,10 @@
   <div class="grid">
 
     <article class="card" role="article">
-      <div class="thumb">AI Stock Research App</div>
+      <div class="thumb thumb--icon thumb--stock">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-10"/><path d="M21 7h-4v4"/></svg>
+        <span class="thumb__label">Stock Research · Streamlit</span>
+      </div>
 
       <h3>AI Stock Research Assistant</h3>
 
@@ -138,7 +150,10 @@
     </article>
 
     <article class="card" role="article">
-      <div class="thumb">AI Business Consultant</div>
+      <div class="thumb thumb--icon thumb--business">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M12 12v3"/></svg>
+        <span class="thumb__label">Business Consultant · Streamlit</span>
+      </div>
 
       <h3>AI Business Consultant</h3>
 
@@ -166,7 +181,10 @@
     </article>
 
     <article class="card" role="article">
-      <div class="thumb">CS Interview Copilot</div>
+      <div class="thumb thumb--icon thumb--interview">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
+        <span class="thumb__label">Interview Copilot · Streamlit</span>
+      </div>
 
       <h3>CS Interview Copilot</h3>
 
