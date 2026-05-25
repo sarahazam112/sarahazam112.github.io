@@ -1,0 +1,266 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My Website</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sarah Azam · Portfolio</title>
+  <meta name="description" content="Portfolio of Sarah Azam, BMOS Finance & Computer Science student at Western University." />
+  <meta property="og:title" content="Sarah Azam · Portfolio" />
+  <meta property="og:description" content="Projects, skills, and contact for Sarah Azam (BMOS Finance & Computer Science, Western University)." />
+  <meta property="og:type" content="website" />
+  <meta name="color-scheme" content="light">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0f172a; /* slate-900 */
+      --muted: #475569; /* slate-600 */
+      --accent: #d6dd1c; /* indigo-600 */
+      --card: #f8fafc; /* slate-50 */
+      --border: #e2e8f0; /* slate-200 */
+      --ring: rgba(79,70,229,0.35);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { 
+        --bg: #150b20; 
+        --fg: #f6e4e4; 
+        --muted: #94a3b8; 
+        --accent: #818cf8; 
+        --card: #0f172a; 
+        --border: #1f2937; 
+        --ring: rgba(129,140,248,0.35);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: var(--fg); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 980px; margin: 0 auto; padding: 24px; }
+    header { position: sticky; top: 0; backdrop-filter: blur(8px); background: color-mix(in oklab, var(--bg) 85%, transparent); border-bottom: 1px solid var(--border); z-index: 10; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { font-weight: 700; letter-spacing: 0.2px; }
+    .nav a { margin-left: 12px; font-weight: 500; color: var(--muted); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--card); color: var(--fg); text-decoration: none; font-weight: 600; box-shadow: 0 1px 0 rgba(0,0,0,0.05); }
+    .btn:hover { box-shadow: 0 2px 12px var(--ring); text-decoration: none; }
+    .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; padding: 48px 0; align-items: center; }
+    .hero h1 { font-size: clamp(28px, 4.5vw, 44px); line-height: 1.15; margin: 0 0 12px; }
+    .hero p { margin: 0 0 18px; color: var(--muted); }
+    .tag { display: inline-block; padding: 6px 10px; border-radius: 999px; background: var(--card); border: 1px solid var(--border); font-size: 14px; color: var(--muted); }
+    .avatar { width: 140px; height: 140px; border-radius: 16px; background: linear-gradient(135deg, var(--card), var(--border)); display: grid; place-items: center; font-weight: 700; color: var(--muted); border: 1px solid var(--border); overflow: hidden; }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    section { padding: 24px 0 8px; }
+    section h2 { font-size: 22px; margin: 24px 0 12px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card { grid-column: span 12; border: 1px solid var(--border); border-radius: 16px; background: var(--card); padding: 16px; transition: box-shadow .2s ease; }
+    .card:hover { box-shadow: 0 6px 24px var(--ring); }
+    .card .thumb { width: 100%; aspect-ratio: 16/9; border-radius: 12px; background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 30%, transparent), var(--border)); border: 1px solid var(--border); margin-bottom: 12px; display: grid; place-items: center; color: var(--muted); font-weight: 600; }
+    .card .thumb.thumb--embed { padding: 0; overflow: hidden; position: relative; display: block; }
+    .card .thumb.thumb--embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; margin: 0; border-radius: 12px; }
+    .card h3 { margin: 0 0 6px; font-size: 18px; }
+    .card p { margin: 0 0 10px; color: var(--muted); }
+    .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .chip { font-size: 12px; padding: 4px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); background: color-mix(in oklab, var(--card) 70%, transparent); }
+    .projects .card-actions { display: flex; gap: 10px; margin-top: 10px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    footer { padding: 28px 0 48px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 24px; }
+    .cols-2 { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 720px){
+      .card { grid-column: span 6; }
+      .cols-2 { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Sarah Azam</div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#resume">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p style="margin: 0 0 16px; color: var(--muted); font-size: 14px;">Bachelor of Management & Organizational Studies (BMOS) — Finance & Computer Science · Western University</p>
+        <h1>Hi, I'm Sarah Azam.</h1>
+        <p>I build projects that combine finance, technology, and data analysis to solve real-world problems. My work ranges from investment research tools and portfolio analytics to software applications that automate workflows and turn complex data into actionable insights.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top: 8px;">
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn" href="https://github.com/your-github" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/sarah-azam-39353a194/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+       <img src="headshot.jpg" alt="Your headshot" width="240">
+      </section>
+
+ <section id="projects" class="projects">
+  <h2>Projects</h2>
+
+  <div class="grid">
+
+    <article class="card" role="article">
+      <div class="thumb">AI Stock Research App</div>
+
+      <h3>AI Stock Research Assistant</h3>
+
+      <p>
+        Streamlit web app that analyzes stocks, financial ratios, SEC filings,
+        uploaded reports, portfolio performance, and comparisons against the S&P 500.
+      </p>
+
+      <div class="meta">
+        <span class="chip">Python</span>
+        <span class="chip">Streamlit</span>
+        <span class="chip">AI</span>
+        <span class="chip">Finance APIs</span>
+      </div>
+
+      <div class="card-actions">
+        <a class="btn" href="https://ai-stock-research-assistant-wilgbc46lxwugrqfcashnn.streamlit.app/" target="_blank" rel="noopener">
+          Open Live App
+        </a>
+        <a class="btn" href="https://ai-stock-research-assistant-wilgbc46lxwugrqfcashnn.streamlit.app/" target="_blank" rel="noopener">
+          Code
+        </a>
+      </div>
+    </article>
+
+    <article class="card" role="article">
+      <div class="thumb">AI Business Consultant</div>
+
+      <h3>AI Business Consultant</h3>
+
+      <p>
+        Streamlit app that acts as a junior business consultant: upload financial data,
+        generate strategic briefs, SWOT and competitor analysis, scenario modeling,
+        and exportable slide decks.
+      </p>
+
+      <div class="meta">
+        <span class="chip">Python</span>
+        <span class="chip">Streamlit</span>
+        <span class="chip">AI</span>
+        <span class="chip">Strategy</span>
+      </div>
+    </article>
+
+    <article class="card" role="article">
+      <div class="thumb">CS Interview Copilot</div>
+
+      <h3>CS Interview Copilot</h3>
+
+      <p>
+        Interview prep tool with flashcards, spaced-style ratings, progress tracking,
+        custom card creation, and AI-generated questions across LeetCode, system design,
+        behavioral, and more.
+      </p>
+
+      <div class="meta">
+        <span class="chip">Python</span>
+        <span class="chip">Streamlit</span>
+        <span class="chip">AI</span>
+        <span class="chip">Interview Prep</span>
+      </div>
+    </article>
+
+    <article class="card" role="article">
+      <div class="thumb thumb--embed">
+        <iframe src="https://docs.google.com/spreadsheets/d/1tWId5Te41Ki1wo5geWSYgET_GjbAxjMxb6MfJ6yYi_Q/preview?rm=minimal" title="Investment Portfolio workbook preview" allow="fullscreen"></iframe>
+      </div>
+
+      <h3>Investment Portfolio</h3>
+
+      <p>
+        Designed a portfolio analytics model that evaluates investment 
+        performance through Monte Carlo simulation, benchmark analysis, 
+        risk metrics, and portfolio optimization techniques.
+      </p>
+
+      <div class="meta">
+        <span class="chip">Investments</span>
+        <span class="chip">Portfolio</span>
+        <span class="chip">Finance</span>
+      </div>
+
+      <div class="card-actions">
+        <a class="btn" href="https://docs.google.com/spreadsheets/d/1tWId5Te41Ki1wo5geWSYgET_GjbAxjMxb6MfJ6yYi_Q/edit?gid=264664618#gid=264664618" target="_blank" rel="noopener">
+          View Workbook
+        </a>
+        <a class="btn" href="Investment_Portfolio.xlsx" download>
+          Download Excel
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="chip">Power BI</span>
+        <span class="chip">Excel (Pivot, Solver, VBA basics)</span>
+        <span class="chip">SQL</span>
+        <span class="chip">Python (pandas, sklearn)</span>
+        <span class="chip">Java</span>
+        <span class="chip">R (tidyverse basics)</span>
+        <span class="chip">Financial Modeling</span>
+        <span class="chip">Git/GitHub</span>
+        <span class="chip">Public Speaking</span>
+      </div>
+    </section>
+
+    <section id="about" class="cols-2">
+      <div>
+        <h2>About</h2>
+        <p>I'm a Bachelor of Management and Organizational Studies (BMOS) Specialization in Finance & Computer Science student at Western University. I like building practical tools that save time and make decisions clearer — whether that’s a compact dashboard or a clean algorithm implementation. I'm especially interested in data‑driven finance, analytics, and product‑minded engineering roles.</p>
+      </div>
+      <div>
+        <h2>Highlights</h2>
+        <ul>
+          <li>Hands‑on with valuation, DCF, and portfolio concepts; comfortable translating models into dashboards.</li>
+          <li>Community involvement and teamwork — I enjoy leading, mentoring, and learning in public.</li>
+          <li>Languages: R, SQL, Excel, Power BI, Python, Java, and C</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="resume">
+      <h2>Resume</h2>
+      <iframe src="SarahAZAM.pdf" style="width:100%; height:800px; border: 1px solid var(--border); border-radius: 16px;" frameborder="0"></iframe>
+      <div style="margin-top: 16px;">
+        <a class="btn" href="SarahAZAM.pdf" download>
+          Download PDF
+        </a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:sarah.azam@example.com">sarahazam112@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/sarah-azam-39353a194/" target="_blank" rel="noopener">https://www.linkedin.com/in/sarah-azam-39353a194/</a></p>
+      <p>GitHub: <a href="https://github.com/your-github" target="_blank" rel="noopener">https://github.com/sarahazam112</a></p>
+    </section>
+
+    <footer>
+      <div>&copy; <span id="year"></span> Sarah Azam. Built with plain HTML & CSS. Fast, accessible, and easy to maintain.</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

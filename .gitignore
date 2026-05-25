@@ -1,0 +1,10 @@
+.DS_Store
+~$*
+.env
+__pycache__/
+.streamlit/secrets.toml
+
+# App code lives in separate GitHub repos
+ai-business-consultant/
+cs-interview-copilot/
+stock-research-assistant/
