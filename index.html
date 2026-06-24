@@ -1,11 +1,5 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>My Website</title>
-
-  <link rel="stylesheet" href="styles.css">
-</head>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,22 +14,12 @@
       --bg: #ffffff;
       --fg: #0f172a; /* slate-900 */
       --muted: #475569; /* slate-600 */
-      --accent: #d6dd1c; /* indigo-600 */
+      --accent: #4f46e5; /* indigo-600 */
       --card: #f8fafc; /* slate-50 */
       --border: #e2e8f0; /* slate-200 */
       --ring: rgba(79,70,229,0.35);
     }
-    @media (prefers-color-scheme: dark) {
-      :root { 
-        --bg: #150b20; 
-        --fg: #f6e4e4; 
-        --muted: #94a3b8; 
-        --accent: #818cf8; 
-        --card: #0f172a; 
-        --border: #1f2937; 
-        --ring: rgba(129,140,248,0.35);
-      }
-    }
+    html { color-scheme: light; }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: var(--fg); line-height: 1.6; }
@@ -120,47 +104,17 @@
   <div class="grid">
 
     <article class="card" role="article">
-      <div class="thumb thumb--icon thumb--stock">
-        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-10"/><path d="M21 7h-4v4"/></svg>
-        <span class="thumb__label">Stock Research · Streamlit</span>
-      </div>
-
-      <h3>AI Stock Research Assistant</h3>
-
-      <p>
-        Streamlit web app that analyzes stocks, financial ratios, SEC filings,
-        uploaded reports, portfolio performance, and comparisons against the S&P 500.
-      </p>
-
-      <div class="meta">
-        <span class="chip">Python</span>
-        <span class="chip">Streamlit</span>
-        <span class="chip">AI</span>
-        <span class="chip">Finance APIs</span>
-      </div>
-
-      <div class="card-actions">
-        <a class="btn" href="https://ai-stock-research-assistant-wilgbc46lxwugrqfcashnn.streamlit.app/" target="_blank" rel="noopener">
-          Open Live App
-        </a>
-        <a class="btn" href="https://github.com/sarahazam112/ai-stock-research-assistant" target="_blank" rel="noopener">
-          Code
-        </a>
-      </div>
-    </article>
-
-    <article class="card" role="article">
       <div class="thumb thumb--icon thumb--business">
         <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M12 12v3"/></svg>
-        <span class="thumb__label">Business Consultant · Streamlit</span>
+        <span class="thumb__label">Junior Analyst Copilot · Streamlit</span>
       </div>
 
-      <h3>AI Business Consultant</h3>
+      <h3>Junior Analyst Copilot</h3>
 
       <p>
-        Streamlit app that acts as a junior business consultant: upload financial data,
-        generate strategic briefs, SWOT and competitor analysis, scenario modeling,
-        and exportable slide decks.
+        Analyze business problems using consultant-style frameworks including SWOT analysis,
+        competitor benchmarking, scenario modeling, and executive recommendations. Designed to help
+        users evaluate opportunities, assess risks, and develop strategic plans.
       </p>
 
       <div class="meta">
@@ -181,6 +135,37 @@
     </article>
 
     <article class="card" role="article">
+      <div class="thumb thumb--icon thumb--stock">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-10"/><path d="M21 7h-4v4"/></svg>
+        <span class="thumb__label">Portfolio Analytics · Streamlit</span>
+      </div>
+
+      <h3>Portfolio Analytics Platform</h3>
+
+      <p>
+        Build custom portfolios, benchmark performance against the S&amp;P 500, compare investments,
+        and generate research insights from financial reports. Designed to help investors evaluate
+        holdings, identify trends, and make more informed investment decisions.
+      </p>
+
+      <div class="meta">
+        <span class="chip">Python</span>
+        <span class="chip">Streamlit</span>
+        <span class="chip">AI</span>
+        <span class="chip">Finance APIs</span>
+      </div>
+
+      <div class="card-actions">
+        <a class="btn" href="https://ai-stock-research-assistant-wilgbc46lxwugrqfcashnn.streamlit.app/" target="_blank" rel="noopener">
+          Open Live App
+        </a>
+        <a class="btn" href="https://github.com/sarahazam112/ai-stock-research-assistant" target="_blank" rel="noopener">
+          Code
+        </a>
+      </div>
+    </article>
+
+    <article class="card" role="article">
       <div class="thumb thumb--icon thumb--interview">
         <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
         <span class="thumb__label">Interview Copilot · Streamlit</span>
@@ -189,9 +174,9 @@
       <h3>CS Interview Copilot</h3>
 
       <p>
-        Interview prep tool with flashcards, spaced-style ratings, progress tracking,
-        custom card creation, and AI-generated questions across LeetCode, system design,
-        behavioral, and more.
+        Prepare for technical interviews through adaptive flashcards, progress tracking, and
+        personalized study plans. The platform helps users identify knowledge gaps, reinforce key
+        concepts, and retain material using spaced repetition.
       </p>
 
       <div class="meta">
