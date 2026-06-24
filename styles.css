@@ -1,0 +1,82 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 :root \{\
+  --bg: #ffffff;\
+  --fg: #0f172a; /* slate-900 */\
+  --muted: #475569; /* slate-600 */\
+  --accent: #4f46e5; /* indigo-600 */\
+  --card: #f8fafc; /* slate-50 */\
+  --border: #e2e8f0; /* slate-200 */\
+  --ring: rgba(79,70,229,0.35);\
+\}\
+\
+@media (prefers-color-scheme: dark) \{\
+  :root \{ \
+    --bg: #0b1220; \
+    --fg: #e5e7eb; \
+    --muted: #94a3b8; \
+    --accent: #818cf8; \
+    --card: #0f172a; \
+    --border: #1f2937; \
+    --ring: rgba(129,140,248,0.35);\
+  \}\
+\}\
+\
+* \{ box-sizing: border-box; \}\
+html, body \{ margin: 0; padding: 0; \}\
+body \{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: var(--fg); line-height: 1.6; \}\
+a \{ color: var(--accent); text-decoration: none; \}\
+a:hover \{ text-decoration: underline; \}\
+\
+.container \{ max-width: 980px; margin: 0 auto; padding: 24px; \}\
+\
+header \{ position: sticky; top: 0; backdrop-filter: blur(8px); background: color-mix(in oklab, var(--bg) 85%, transparent); border-bottom: 1px solid var(--border); z-index: 10; \}\
+.nav \{ display: flex; align-items: center; justify-content: space-between; gap: 16px; \}\
+.brand \{ font-weight: 700; letter-spacing: 0.2px; \}\
+.nav a \{ margin-left: 12px; font-weight: 500; color: var(--muted); \}\
+\
+.btn \{ display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--card); color: var(--fg); text-decoration: none; font-weight: 600; box-shadow: 0 1px 0 rgba(0,0,0,0.05); \}\
+.btn:hover \{ box-shadow: 0 2px 12px var(--ring); text-decoration: none; \}\
+\
+.hero \{ display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; padding: 48px 0; align-items: center; \}\
+.hero h1 \{ font-size: clamp(28px, 4.5vw, 44px); line-height: 1.15; margin: 0 0 12px; \}\
+.hero p \{ margin: 0 0 18px; color: var(--muted); \}\
+\
+.tag \{ display: inline-block; padding: 6px 10px; border-radius: 999px; background: var(--card); border: 1px solid var(--border); font-size: 14px; color: var(--muted); \}\
+\
+.avatar \{ width: 140px; height: 140px; border-radius: 16px; background: linear-gradient(135deg, var(--card), var(--border)); display: grid; place-items: center; font-weight: 700; color: var(--muted); border: 1px solid var(--border); \}\
+\
+section \{ padding: 24px 0 8px; \}\
+section h2 \{ font-size: 22px; margin: 24px 0 12px; \}\
+\
+.grid \{ display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; \}\
+\
+.card \{ grid-column: span 12; border: 1px solid var(--border); border-radius: 16px; background: var(--card); padding: 16px; transition: box-shadow .2s ease; \}\
+.card:hover \{ box-shadow: 0 6px 24px var(--ring); \}\
+.card .thumb \{ width: 100%; aspect-ratio: 16/9; border-radius: 12px; background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 30%, transparent), var(--border)); border: 1px solid var(--border); margin-bottom: 12px; display: grid; place-items: center; color: var(--muted); font-weight: 600; \}\
+.card h3 \{ margin: 0 0 6px; font-size: 18px; \}\
+.card p \{ margin: 0 0 10px; color: var(--muted); \}\
+\
+.meta \{ display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; \}\
+.chip \{ font-size: 12px; padding: 4px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); background: color-mix(in oklab, var(--card) 70%, transparent); \}\
+\
+.projects .card-actions \{ display: flex; gap: 10px; margin-top: 10px; \}\
+\
+.skills \{ display: flex; flex-wrap: wrap; gap: 10px; \}\
+\
+footer \{ padding: 28px 0 48px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 24px; \}\
+\
+.cols-2 \{ display: grid; grid-template-columns: 1fr; gap: 16px; \}\
+@media (min-width: 720px)\{\
+  .card \{ grid-column: span 6; \}\
+  .cols-2 \{ grid-template-columns: 1fr 1fr; \}\
+\}\
+\
+/* moved from inline style */\
+.actions \{ display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; \}\
+}
